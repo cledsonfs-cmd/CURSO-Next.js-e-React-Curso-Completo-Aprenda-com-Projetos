@@ -1,0 +1,2 @@
+npx create-next-app@^10.2.3 exercicios
+npm run dev
