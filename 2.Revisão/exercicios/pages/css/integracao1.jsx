@@ -1,5 +1,5 @@
 
-export default function integracao() {
+export default function integracao2() {
     return (
         <div className="integracao1">
             <div className="vermelha">Texto #01</div>
