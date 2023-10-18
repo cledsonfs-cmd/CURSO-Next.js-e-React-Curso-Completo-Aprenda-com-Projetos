@@ -2,3 +2,4 @@ npx create-next-app@^10.2.3 exercicios
 npm run dev
 
 npx create-next-app@^11.0.0 next-basico
+npm run build
