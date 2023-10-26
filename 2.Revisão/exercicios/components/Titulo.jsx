@@ -10,5 +10,4 @@ export default function Titulo(props) {
             <h2>{props.secundario}</h2>
         </>
     )
-
 }

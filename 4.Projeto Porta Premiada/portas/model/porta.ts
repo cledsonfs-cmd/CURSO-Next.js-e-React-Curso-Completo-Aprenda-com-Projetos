@@ -28,12 +28,12 @@ export default class PortaModel {
     }
 
     get fechada() {
-        return !this.#aberta
+        return !this.aberta
     }
 
-    desselecionar(){
+    desselecionar() {
         const selecionada = false
-        return new PortaModel(this.numero, this.temPresente, selecionada, this.aberta)
+        return new PortaModel(this.numero, this.temPresente, selecionada, this.aberta)        
     }
 
     alternarSelecao() {

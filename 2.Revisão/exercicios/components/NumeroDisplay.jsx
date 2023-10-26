@@ -1,5 +1,5 @@
 export default function NumeroDisplay(props) {
-    return(
+    return (
         <div style={{
             display: "flex",
             justifyContent: "center",
@@ -9,7 +9,7 @@ export default function NumeroDisplay(props) {
             borderRadius: "25px",
             backgroundColor: "#222",
             color: "#fff",
-            fontSize:"2rem",
+            fontSize: "2rem",
             margin: "20px"
         }}>
             {props.numero}

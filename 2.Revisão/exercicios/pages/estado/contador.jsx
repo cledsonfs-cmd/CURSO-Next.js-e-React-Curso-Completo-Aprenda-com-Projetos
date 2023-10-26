@@ -2,28 +2,22 @@ import { useState } from "react"
 import NumeroDisplay from "../../components/NumeroDisplay"
 
 export default function contador() {
-    const [valor, setValor] = useState(0)
+    const [numero, setNumero] = useState(0)
 
-    function alteraValor(acao) {
-        if (acao === '+') {
-            setValor(valor + 1)
-        } else {
-            setValor(valor - 1)
-        }
-    }
+    const dec = () => setNumero(numero - 1)
 
     return (
         <div style={{
             display: "flex",
-            flexDirection:"column",
+            flexDirection: "column",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
         }}>
             <h1>Contador</h1>
-            <NumeroDisplay numero={valor} />
+            <NumeroDisplay numero={numero} />
             <div>
-                <button onClick={() => alteraValor('+')}>+</button>
-                <button onClick={() => alteraValor('-')}>-</button>
+                <button onClick={dec}>-</button>
+                <button onClick={() => setNumero(numero + 1)}>+</button>
             </div>
         </div>
     )

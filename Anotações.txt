@@ -3,3 +3,9 @@ npm run dev
 
 npx create-next-app@^11.0.0 next-basico
 npm run build
+
+yarn run dev
+
+SPA -> single page application
+SSR -> server side rendering
+SSG -> static site generate

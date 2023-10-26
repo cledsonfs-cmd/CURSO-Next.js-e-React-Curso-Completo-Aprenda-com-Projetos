@@ -8,13 +8,16 @@ export default function repeticao2() {
 
     function renderizarLinhas() {
         return listaProdutos.map(produto => {
-            return (<tr key={produto.id}>
-                <td style={comBorda}>{produto.id}</td>
-                <td style={comBorda}>{produto.nome}</td>
-                <td style={comBorda}>{produto.preco}</td>
-            </tr>)
+            return (
+                <tr key={produto.id}>
+                    <td style={comBorda}>{produto.id}</td>
+                    <td style={comBorda}>{produto.nome}</td>
+                    <td style={comBorda}>{produto.preco}</td>
+                </tr>
+            )
         })
     }
+
 
 
     return (

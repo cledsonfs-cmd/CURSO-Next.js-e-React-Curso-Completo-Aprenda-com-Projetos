@@ -1,7 +1,7 @@
 export default function If(props) {
-    if(props.teste){
+    if(props.teste) {
         return props.children
-    }else{
+    } else {
         return null
     }
 }

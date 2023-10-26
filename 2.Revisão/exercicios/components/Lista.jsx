@@ -1,7 +1,13 @@
 export default function Lista(props) {
-    return(
-        <ul style={{listStyle:"none"}}>
-            {props.children}
-        </ul>
+    return (
+        <div>
+            <h1>Lista de Algo</h1>
+            <ul style={{
+                listStyle: "none",
+                padding: 0
+            }}>
+                {props.children}
+            </ul>
+        </div>
     )
 }

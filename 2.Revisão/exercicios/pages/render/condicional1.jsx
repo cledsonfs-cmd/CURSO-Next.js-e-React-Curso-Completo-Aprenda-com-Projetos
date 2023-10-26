@@ -1,16 +1,18 @@
-import If from "../../components/If";
 import SomentePar from "../../components/SomentePar";
 
 export default function condicional1() {
-    const numero = 5
-    return(
+    return (
         <div>
-            <If teste={numero % 2 === 0}>
-                <h1>O número {numero} é par</h1>
-            </If>
-            <If teste={numero % 2 !== 0}>
-                <h1>O número {numero} é impar</h1>
-            </If>
+            <SomentePar numero={1} />
+            <SomentePar numero={2} />
+            <SomentePar numero={3} />
+            <SomentePar numero={4} />
+            <SomentePar numero={5} />
+            <SomentePar numero={6} />
+            <SomentePar numero={7} />
+            <SomentePar numero={8} />
+            <SomentePar numero={9} />
+            <SomentePar numero={10} />
         </div>
     )
 }
