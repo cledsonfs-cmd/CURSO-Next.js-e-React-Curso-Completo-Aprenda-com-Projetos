@@ -9,15 +9,35 @@ export default class RespostaModel {
         this.#revelada = revelada
     }
 
-    get valor(){
+    static certa(valor: string) {
+        return new RespostaModel(valor, true)
+    }
+
+    static errada(valor: string) {
+        return new RespostaModel(valor, false)
+    }
+
+    get valor() {
         return this.#valor
     }
 
-    get acerta(){
+    get acerta() {
         return this.#acerta
     }
 
-    get revelada(){
+    get revelada() {
         return this.#revelada
+    }
+
+    revelar(){
+        return new RespostaModel(this.#valor, this.#acerta, true)
+    }
+
+    paraObjeto() {
+        return {
+            valor: this.#valor,
+            acerta: this.#acerta,
+            revelada: this.#revelada,
+        }
     }
 }
