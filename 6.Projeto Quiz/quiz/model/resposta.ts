@@ -1,18 +1,18 @@
 export default class RespostaModel {
     #valor: string
-    #acerta: boolean
+    #certa: boolean
     #revelada: boolean
 
-    constructor(valor: string, acerta: boolean, revelada = false) {
+    constructor(valor: string, certa: boolean, revelada = false) {
         this.#valor = valor
-        this.#acerta = acerta
+        this.#certa = certa
         this.#revelada = revelada
     }
 
     static certa(valor: string) {
         return new RespostaModel(valor, true)
     }
-
+    
     static errada(valor: string) {
         return new RespostaModel(valor, false)
     }
@@ -21,23 +21,27 @@ export default class RespostaModel {
         return this.#valor
     }
 
-    get acerta() {
-        return this.#acerta
+    get certa() {
+        return this.#certa
     }
-
+    
     get revelada() {
         return this.#revelada
     }
 
-    revelar(){
-        return new RespostaModel(this.#valor, this.#acerta, true)
+    revelar() {
+        return new RespostaModel(this.#valor, this.#certa, true)
+    }
+
+    static criarUsandoObjeto(obj: RespostaModel): RespostaModel {
+        return new RespostaModel(obj.valor, obj.certa, obj.revelada)
     }
 
     paraObjeto() {
         return {
             valor: this.#valor,
-            acerta: this.#acerta,
-            revelada: this.#revelada,
+            certa: this.#certa,
+            revelada: this.#revelada
         }
     }
 }

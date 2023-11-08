@@ -1,8 +1,8 @@
-import QuestaoModel from "../../model/questao"
+import QuestaoModel from "../../model/questao";
 import RespostaModel from "../../model/resposta";
 
 const questoes: QuestaoModel[] = [
-    new QuestaoModel(306, 'Qual bicho transmite a doença de chagas?', [
+    new QuestaoModel(306, 'Qual bicho transmite a Doença de Chagas?', [
         RespostaModel.errada('Abelha'),
         RespostaModel.errada('Barata'),
         RespostaModel.errada('Pulga'),
@@ -100,4 +100,4 @@ const questoes: QuestaoModel[] = [
     ]),
 ]
 
-export default questoes;
+export default questoes
