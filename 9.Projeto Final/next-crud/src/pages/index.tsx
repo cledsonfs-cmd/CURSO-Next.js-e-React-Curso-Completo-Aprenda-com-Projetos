@@ -1,41 +1,12 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import Layout from '../components/Layout'
 import Tabela from '../components/Tabela'
-import Cliente from '../core/Cliente'
 import Botao from '../components/Botao'
 import Formulario from '../components/Formulario'
-import { useState } from 'react'
+import useClientes from '../hooks/useClients'
 
 export default function Home() {
-  const [cliente, setClente] = useState<Cliente>(Cliente.vazio())
-  const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela')
 
-  const clientes = [
-    new Cliente('Ana', 34, '1'),
-    new Cliente('Bia', 45, '2'),
-    new Cliente('Carlos', 23, '3'),
-    new Cliente('Pedro', 54, '4')
-  ]
-
-  function clienteSelecionado(cliente: Cliente) {
-    setClente(cliente)
-    setVisivel('form')
-  }
-
-  function clienteExcluido(cliente: Cliente) {
-
-  }
-
-  function novoCliente(){
-    setClente(Cliente.vazio())
-    setVisivel('form')
-  }
-
-  function salvarCliente(cliente: Cliente){
-    setVisivel('tabela')
-  }
-
+  const { cliente, clientes, novoCliente, selecionarCliente, excluirCliente, salvarCliente, tabelaVisivel,exibirTabela } = useClientes()
 
   return (
     <div className={`
@@ -44,15 +15,15 @@ export default function Home() {
       text-white
     `}>
       <Layout titulo='Cadastro Simples'>
-        {visivel == 'tabela' ? (
+        {tabelaVisivel ? (
           <>
             <div className='flex justify-end'>
               <Botao cor="green" className='mb-4' onClick={novoCliente}>Novo Cliente</Botao>
             </div>
-            <Tabela clientes={clientes} clienteSelecionado={clienteSelecionado} clienteExcluido={clienteExcluido}></Tabela>
+            <Tabela clientes={clientes} clienteSelecionado={selecionarCliente} clienteExcluido={excluirCliente}></Tabela>
           </>
         ) : (
-          <Formulario cliente={cliente} cancelado={() => setVisivel('tabela')} clienteMudou={salvarCliente}/>
+          <Formulario cliente={cliente} cancelado={() => exibirTabela()} clienteMudou={salvarCliente} />
         )}
 
       </Layout>
